@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hateno Village (Day)   Zelda Breath of the Wild Soundtrack.wav-e92946ca0fc663829dd4873486800742.sample"
+
+[deps]
+
+source_file="res://Extra/Hateno Village (Day)   Zelda Breath of the Wild Soundtrack.wav"
+dest_files=[ "res://.import/Hateno Village (Day)   Zelda Breath of the Wild Soundtrack.wav-e92946ca0fc663829dd4873486800742.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
