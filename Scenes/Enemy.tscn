@@ -1,38 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Textures/angry-bird-icon.png" type="Texture" id=2]
+[ext_resource path="res://Textures/normalmonster_1.png" type="Texture" id=2]
+[ext_resource path="res://Textures/normalmonster_2.png" type="Texture" id=3]
+[ext_resource path="res://Textures/normalmonster_3.png" type="Texture" id=4]
+[ext_resource path="res://Textures/normalmonster_4.png" type="Texture" id=5]
+[ext_resource path="res://Textures/normalmonster_5.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 6.54024
 
-custom_solver_bias = 0.0
-radius = 10.0
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [node name="Enemy" type="Area2D"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
 velocity = Vector2( 0, -200 )
 
-[node name="Shape" type="CollisionShape2D" parent="." index="0"]
-
-position = Vector2( 10.7548, -3.33638 )
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 1.7548, -0.33638 )
 scale = Vector2( 8.23328, 6.86463 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
-
-rotation = -1.62442
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
 [connection signal="mouse_entered" from="." to="." method="_on_Enemy_mouse_entered"]
-
-

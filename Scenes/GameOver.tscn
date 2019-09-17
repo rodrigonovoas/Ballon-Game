@@ -1,103 +1,52 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Textures/gameover.png" type="Texture" id=1]
-[ext_resource path="res://Extra/heyboy-heygirl/heyboy!heygirl!.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scripts/botones_simples.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Textures/gameover.png" type="Texture" id=2]
+[ext_resource path="res://Extra/heyboy-heygirl/heyboy!heygirl!.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/simple_buttons.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 50
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-
 size = 50
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
+font_data = ExtResource( 3 )
 
 [node name="GameOver" type="Node"]
+script = ExtResource( 1 )
 
-_sections_unfolded = [ "Pause" ]
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 565.916, 308.905 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Continuar" type="Button" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Continue" type="Button" parent="."]
 margin_left = 127.0
 margin_top = 399.0
 margin_right = 412.0
 margin_bottom = 495.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.973523, 0.587463, 0.976563, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "continuar"
-flat = false
-align = 1
-script = ExtResource( 3 )
-_sections_unfolded = [ "custom_colors" ]
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Salir" type="Button" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Quit" type="Button" parent="."]
 margin_left = 644.0
 margin_top = 399.0
 margin_right = 895.0
 margin_bottom = 495.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.796101, 0.561447, 0.871094, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "salir"
-flat = false
-align = 1
-script = ExtResource( 3 )
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
-
-[connection signal="pressed" from="Salir" to="Salir" method="_on_Salir_pressed"]
-
-
+[connection signal="pressed" from="Continue" to="Continue" method="_on_Continue_pressed"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_Quit_pressed"]
