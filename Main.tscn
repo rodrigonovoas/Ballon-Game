@@ -81,6 +81,7 @@ __meta__ = {
 }
 
 [node name="Linea" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, -4 )
 script = ExtResource( 10 )
 

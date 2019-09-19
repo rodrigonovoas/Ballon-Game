@@ -20,7 +20,7 @@ animations = [ {
 
 [node name="Enemy" type="Area2D"]
 script = ExtResource( 1 )
-velocity = Vector2( 0, -200 )
+velocity = Vector2( 0, -100 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2( 1.7548, -0.33638 )
@@ -30,6 +30,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 3
 playing = true
 [connection signal="mouse_entered" from="." to="." method="_on_Enemy_mouse_entered"]

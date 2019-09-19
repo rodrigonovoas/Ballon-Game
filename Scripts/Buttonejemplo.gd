@@ -1,14 +1,22 @@
 extends Button
 
 
-func _on_Button_pressed():
-	_guardar()
-	pass # Replace with function body.
+var score_file = "C://Users//kuluk//Documents//highscore.txt"
+var highscore = 10
 
-func _guardar():
-	var dict = {}
-	var file = File.new()
-	file.open("C://Users//kuluk//panelText.json", file.READ)
-	var text = "ok"
-	file.store_string(text)
-	file.close()
+func _ready():
+	save_score()
+
+func load_score():
+    var f = File.new()
+    if f.file_exists(score_file):
+        f.open(score_file, File.READ)
+        var content = f.get_as_text()
+        highscore = int(content)
+        f.close()
+
+func save_score():
+    var f = File.new()
+    f.open(score_file, File.WRITE)
+    f.store_string(str(highscore))
+    f.close()

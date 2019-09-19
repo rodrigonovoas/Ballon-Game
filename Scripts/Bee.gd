@@ -11,7 +11,7 @@ func _ready():
 
 func _process(delta):
 	self.position.y = self.position.y - 2
-	self.position.x = self.position.x * direction
+	self.position.x = self.position.x + (3 * direction)
 	pass
 
 
