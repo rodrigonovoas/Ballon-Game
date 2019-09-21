@@ -9,8 +9,6 @@ func _process(delta):
 	self.position.y = self.position.y - 2
 	pass
 
-
-
 func _on_Area_mouse_entered():
 	self.queue_free()
 	utils.vidas -= 1

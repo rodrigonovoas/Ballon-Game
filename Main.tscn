@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/MainLevel.gd" type="Script" id=1]
 [ext_resource path="res://Textures/level_background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/SpawnEnemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Extra/Hateno Village (Day)   Zelda Breath of the Wild Soundtrack.wav" type="AudioStream" id=4]
+[ext_resource path="res://Extra/backgroundmusic.wav" type="AudioStream" id=4]
 [ext_resource path="res://Textures/icons8-audio-26.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Sonido.gd" type="Script" id=6]
 [ext_resource path="res://Extra/BULKYPIX.TTF" type="DynamicFontData" id=7]
@@ -21,6 +21,13 @@ font_data = ExtResource( 7 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 13.3181, 10 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Extra/BULKYPIX.TTF"
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = SubResource( 4 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -40,7 +47,7 @@ stream = ExtResource( 4 )
 volume_db = -15.0
 autoplay = true
 
-[node name="Button" type="Button" parent="."]
+[node name="SoundButton" type="Button" parent="."]
 margin_left = 925.0
 margin_top = 647.0
 margin_right = 963.0
@@ -68,9 +75,6 @@ margin_right = 1026.0
 margin_bottom = 73.0
 custom_fonts/font = SubResource( 2 )
 text = "x3"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Life" type="Sprite" parent="."]
 position = Vector2( 910.091, 34.0094 )
@@ -80,14 +84,27 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Linea" type="Area2D" parent="."]
+[node name="LimitLine" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 0, -4 )
 script = ExtResource( 10 )
 
-[node name="Shape" type="CollisionShape2D" parent="Linea"]
+[node name="Shape" type="CollisionShape2D" parent="LimitLine"]
 position = Vector2( 513.613, -18.742 )
 scale = Vector2( 38.4854, 1.43419 )
 shape = SubResource( 3 )
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
-[connection signal="area_entered" from="Linea" to="Linea" method="_on_Linea_area_entered"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 70.0
+margin_right = 170.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="SoundButton" to="SoundButton" method="_on_Button_pressed"]
+[connection signal="area_entered" from="LimitLine" to="LimitLine" method="_on_Linea_area_entered"]
