@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rLJSdyuCajinCOZt82rbDg1XdQtf96WrMnyFCq4UCOgg5X4ToQAXy51rsDhA_jaIIA=w300.png-859ebd815ab20587ecc56539d9a1f7b6.stex"
+path="res://.import/mensaje.jpg-813e12e3028840abc098ba7cc1035d30.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/rLJSdyuCajinCOZt82rbDg1XdQtf96WrMnyFCq4UCOgg5X4ToQAXy51rsDhA_jaIIA=w300.png"
-dest_files=[ "res://.import/rLJSdyuCajinCOZt82rbDg1XdQtf96WrMnyFCq4UCOgg5X4ToQAXy51rsDhA_jaIIA=w300.png-859ebd815ab20587ecc56539d9a1f7b6.stex" ]
+source_file="res://Textures/mensaje.jpg"
+dest_files=[ "res://.import/mensaje.jpg-813e12e3028840abc098ba7cc1035d30.stex" ]
 
 [params]
 

@@ -1,12 +1,8 @@
 extends Node
 
-var score_file = "C://Users//kuluk//Documents//highscore.txt"
+var score_file = "user://savegame.txt"
 var score = 0
 var vidas = 3
-
-func _ready():
-	pass
-
 
 func getscore():
 	return score
@@ -18,6 +14,8 @@ func load_score():
 		var content = f.get_as_text()
 		f.close()
 		return int(content)
+	else:
+		return 0
 
 func save_score():
 	var f = File.new()

@@ -32,7 +32,7 @@ func _on_Timer_timeout():
 func _on_TripleTimer_timeout():
 	var sp_balloon_instance = sp_balloon.instance()
 	var pos = Vector2()
-	pos.x = rand_range(0+30,1050)
+	pos.x = rand_range(0+30,980)
 	pos.y = 700
 	sp_balloon_instance.position = pos
 	get_node("container").add_child(sp_balloon_instance)
@@ -43,7 +43,7 @@ func _on_TripleTimer_timeout():
 func _on_EnemyTimer_timeout():
 	var enemy_instance = enemy.instance()
 	var pos = Vector2()
-	pos.x = rand_range(0+30,1050)
+	pos.x = rand_range(0+30,100)
 	pos.y = 700
 	enemy_instance.position = pos
 	get_node("container").add_child(enemy_instance)

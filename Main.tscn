@@ -1,23 +1,23 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/MainLevel.gd" type="Script" id=1]
 [ext_resource path="res://Textures/level_background.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/SpawnEnemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Extra/backgroundmusic.wav" type="AudioStream" id=4]
-[ext_resource path="res://Textures/icons8-audio-26.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/Sonido.gd" type="Script" id=6]
-[ext_resource path="res://Extra/BULKYPIX.TTF" type="DynamicFontData" id=7]
-[ext_resource path="res://Scripts/scorelabel.gd" type="Script" id=8]
-[ext_resource path="res://Textures/heart pixel art 64x64.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/Linea.gd" type="Script" id=10]
+[ext_resource path="res://Extra/backgroundmusic.wav" type="AudioStream" id=3]
+[ext_resource path="res://Textures/icons8-audio-26.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Sonido.gd" type="Script" id=5]
+[ext_resource path="res://Extra/BULKYPIX.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Scripts/scorelabel.gd" type="Script" id=7]
+[ext_resource path="res://Textures/heart pixel art 64x64.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Linea.gd" type="Script" id=9]
+[ext_resource path="res://Textures/mensaje.jpg" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
-font_data = ExtResource( 7 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
-font_data = ExtResource( 7 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 13.3181, 10 )
@@ -28,6 +28,9 @@ font_path = "res://Extra/BULKYPIX.TTF"
 [sub_resource type="DynamicFont" id=5]
 size = 25
 font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 6 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -40,10 +43,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="SpawnEnemy" parent="." instance=ExtResource( 3 )]
-
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 volume_db = -15.0
 autoplay = true
 
@@ -53,9 +54,9 @@ margin_top = 647.0
 margin_right = 963.0
 margin_bottom = 679.0
 rect_scale = Vector2( 2, 2 )
-icon = ExtResource( 5 )
+icon = ExtResource( 4 )
 flat = true
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -66,7 +67,7 @@ margin_top = 6.0
 margin_right = 156.0
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 1 )
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="VidaLabel" type="Label" parent="."]
 margin_left = 943.0
@@ -79,7 +80,7 @@ text = "x3"
 [node name="Life" type="Sprite" parent="."]
 position = Vector2( 910.091, 34.0094 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -87,7 +88,7 @@ __meta__ = {
 [node name="LimitLine" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 0, -4 )
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="Shape" type="CollisionShape2D" parent="LimitLine"]
 position = Vector2( 513.613, -18.742 )
@@ -106,5 +107,27 @@ custom_fonts/font = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Mensaje" type="Sprite" parent="."]
+visible = false
+position = Vector2( 549.5, 347.5 )
+scale = Vector2( 1.80364, 1.54506 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OK" type="Button" parent="."]
+visible = false
+margin_left = 499.0
+margin_top = 459.0
+margin_right = 620.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 6 )
+text = "OK"
+__meta__ = {
+"_edit_lock_": true
+}
 [connection signal="pressed" from="SoundButton" to="SoundButton" method="_on_Button_pressed"]
 [connection signal="area_entered" from="LimitLine" to="LimitLine" method="_on_Linea_area_entered"]
+[connection signal="pressed" from="OK" to="." method="_on_OK_pressed"]
