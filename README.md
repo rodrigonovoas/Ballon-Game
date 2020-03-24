@@ -5,10 +5,10 @@
 This is my second mini-game done with Godot Engine.
 In this game I create a simple system which consits in spawning balloons and enemies.
 When you touch an enemy, you lose a health point, and when a balloon escapes, you lose one point too.
-So, the goal of the game is to hold up as much as you can.
+So, the goal of the game is holding up as much as you can.
 
-Some features I you can see in this game:
+Some features you can see in this game:
 - Simple .txt save system.
-- Enemy/ballon spawn system (based on a node with timers)
+- Enemy/balloon spawn system (based on node with timers)
 - First time playing meessage.
 - Audio manipulation.
